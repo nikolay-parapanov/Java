@@ -1,7 +1,7 @@
 package P02MultidimentionalArrays;
 
 import java.util.ArrayDeque;
-import java.util.ArrayList;
+import java.util.Deque;
 import java.util.Scanner;
 
 public class L02PositionsOf {
@@ -10,7 +10,7 @@ public class L02PositionsOf {
         Scanner scanner = new Scanner(System.in);
 
         int[][] matrix = readMatrixOfIntegers(scanner);
-        ArrayDeque<> arrayMatches = new ArrayDeque<>();
+        Deque<String> answers = new ArrayDeque<>();
 
 //        printMatrixOfIntegers(matrix);
         int lookUpNumber = Integer.parseInt(scanner.nextLine());
@@ -18,9 +18,16 @@ public class L02PositionsOf {
         for (int row = 0; row < matrix.length; row++) {
             for (int col = 0; col < matrix[row].length; col++) {
                 if (lookUpNumber == (matrix[row][col])) {
-                    arrayMatches.add(row, col);
+//                    System.out.println(row + " " + col );
+                    answers.add(row + " " + col);
                 }
             }
+        }
+        if (answers.isEmpty()) {
+            System.out.println("not found");
+        }
+        while (!answers.isEmpty()){
+            System.out.println(answers.poll());
         }
     }
 
