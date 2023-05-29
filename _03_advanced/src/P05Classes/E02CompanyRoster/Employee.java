@@ -30,4 +30,12 @@ public class Employee {
         this.email = email;
         this.age = age;
     }
+    public double getSalary(){
+        return salary;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s %.2f %s %d", this.name, this.salary, this.email, this.age);
+    }
 }
