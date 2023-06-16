@@ -2,7 +2,17 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/_04-oop/P01-WorkingWithAbstraction" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/_04-oop/P02-Inheritance" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/_04-oop/P03-Encapsulation" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/_04-oop/P04-InterfacesAndAbstraction" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/_04-oop/P04-InterfacesAndAbstraction/P01_DefineAnInterfacePerson" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JUG Academy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JUG Academy/01-Basics" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/_04-oop/P05-Polymorphism" isTestSource="false" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

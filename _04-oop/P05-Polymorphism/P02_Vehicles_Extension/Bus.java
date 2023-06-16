@@ -8,9 +8,7 @@ public class Bus extends Vehicle {
     }
 
     public String driveWithPassengers(double distance) {
-        super.addConsumption(AIR_CONDITIONER_ADDITIONAL_CONSUMPTION);
-        String out = super.drive(distance);
-        super.subtractConsumption(AIR_CONDITIONER_ADDITIONAL_CONSUMPTION);
-        return out;
+        return super.doWithIncreasedConsumption(AIR_CONDITIONER_ADDITIONAL_CONSUMPTION, () ->super.drive(distance));
+
     }
 }

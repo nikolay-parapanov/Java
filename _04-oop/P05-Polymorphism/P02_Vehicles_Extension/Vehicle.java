@@ -1,6 +1,7 @@
 package P02_Vehicles_Extension;
 
 import java.text.DecimalFormat;
+import java.util.function.Supplier;
 
 public class Vehicle {
     private double fuel;
@@ -13,12 +14,22 @@ public class Vehicle {
         this.consumption = consumption;
     }
 
+    protected <T> T doWithIncreasedConsumption(double additionalConsumption, Supplier<T> supplier) {
+        this.consumption += additionalConsumption;
+        try {
+            return supplier.get();
+        } catch (Exception ex) {
+            throw new IllegalArgumentException(ex);
+        } finally {
+            this.consumption -= additionalConsumption;
+        }
+    }
 
-    protected void addConsumption(double additionalConsumption){
+    protected void addConsumption(double additionalConsumption) {
         this.consumption += additionalConsumption;
     }
 
-    protected void subtractConsumption(double subtraction){
+    protected void subtractConsumption(double subtraction) {
         this.consumption -= subtraction;
     }
 
