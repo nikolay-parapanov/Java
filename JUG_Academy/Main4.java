@@ -1,4 +1,4 @@
-package P03_WildFarm;
+package JUG_Academy;
 
 public class Main4 {
     public static void main(String[] args) {

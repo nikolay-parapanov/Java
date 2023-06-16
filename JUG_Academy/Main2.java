@@ -1,3 +1,4 @@
+package JUG_Academy;
 
 public class Main2 {
     public static void main(String[] args) {
