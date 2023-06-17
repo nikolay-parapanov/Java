@@ -1,4 +1,4 @@
-package JUG_Academy;
+package JUG_Academy.Fundamentals;
 
 
 public class Main3 {
