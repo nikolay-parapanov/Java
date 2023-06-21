@@ -1,27 +1,44 @@
 package com.example.springinitdemo.services;
 
+import com.example.springinitdemo.models.Account;
 import com.example.springinitdemo.models.User;
 import com.example.springinitdemo.repositories.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
 
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
+
+    @Autowired
+    public UserServiceImpl(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     @Override
     public void register(String username, int age) {
-        //Validate username+age
         if (username.isBlank() || age < 18) {
-            throw new RuntimeException("Validation failed.");
+            throw new RuntimeException("Validation failed");
         }
 
-        //Check username is unique
-        Option<User> byUsername = this.userRepository.findbyUsername(username);
+        Optional<User> byUsername = this.userRepository.findByUsername(username);
+        if (byUsername.isPresent()) {
+            throw new RuntimeException("Username already in use");
+        }
+
+        Account account = new Account();
+        User user = new User(username, age, account);
 
 
-        //Add default account
-        //Save user
 
+        this.userRepository.save(user);
+    }
+
+    @Override
+    public User findByUsername(String username) {
+        return this.userRepository.findByUsername(username).get();
     }
 }

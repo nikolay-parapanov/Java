@@ -1,7 +1,6 @@
 package com.example.springinitdemo.models;
 
 import jakarta.persistence.*;
-
 import java.math.BigDecimal;
 
 @Entity
@@ -15,6 +14,7 @@ public class Account {
     private BigDecimal balance;
 
     public Account() {
+        this.balance = BigDecimal.ZERO;
     }
 
     public long getId() {
@@ -33,4 +33,3 @@ public class Account {
         this.balance = balance;
     }
 }
-

@@ -2,7 +2,9 @@ package com.example.springinitdemo.models;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "users")
@@ -15,10 +17,20 @@ public class User {
     private String username;
 
     private int age;
-    @OneToMany
+
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Account> accounts;
 
     public User() {
+        this.accounts = new ArrayList<>();
+    }
+
+    public User(String username, int age, Account account) {
+        this();
+
+        this.username = username;
+        this.age = age;
+        this.accounts.add(account);
     }
 
     public long getId() {
@@ -45,11 +57,14 @@ public class User {
         this.age = age;
     }
 
-    public List<Account> getAccounts() {
-        return accounts;
+    public List<Long> getAccountIds() {
+        return this.accounts
+                .stream()
+                .map(Account::getId)
+                .collect(Collectors.toList());
     }
 
-    public void setAccounts(List<Account> accounts) {
-        this.accounts = accounts;
-    }
+    public void addAccount(Account account) {}
+
+    public void removeAccount(Account account) {}
 }
