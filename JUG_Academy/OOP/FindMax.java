@@ -1,13 +1,11 @@
 public class FindMax {
 
+
     public static void main(String[] args) {
 
-    }
-    public static void main(String[] args) {
-
-        System.out.println(findMax(intArray));
-        System.out.println(findMax(intArray));
-        System.out.println(findMax(intArray));
+//        System.out.println(findMax(intArray));
+//        System.out.println(findMax(intArray));
+//        System.out.println(findMax(intArray));
 
     }
 
