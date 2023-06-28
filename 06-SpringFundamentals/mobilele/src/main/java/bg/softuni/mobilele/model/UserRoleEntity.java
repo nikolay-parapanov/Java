@@ -1,6 +1,6 @@
-package bg.softuni.mobilele.model.entity;
+package bg.softuni.mobilele.model;
 
-import bg.softuni.mobilele.model.entity.enums.UserRoleEnum;
+import bg.softuni.mobilele.model.enums.UserRoleEnum;
 import jakarta.persistence.*;
 
 @Entity
@@ -19,16 +19,18 @@ public class UserRoleEntity {
         return id;
     }
 
-    public void setId(Long id) {
+    public UserRoleEntity setId(Long id) {
         this.id = id;
+        return this;
     }
 
     public UserRoleEnum getUserRole() {
         return userRole;
     }
 
-    public void setUserRole(UserRoleEnum userRole) {
+    public UserRoleEntity setUserRole(UserRoleEnum userRole) {
         this.userRole = userRole;
+        return this;
     }
 
     @Override
@@ -39,5 +41,4 @@ public class UserRoleEntity {
                 '}';
     }
 }
-
 

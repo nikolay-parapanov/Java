@@ -1,4 +1,4 @@
-package bg.softuni.mobilele.model.entity;
+package bg.softuni.mobilele.model;
 
 import jakarta.persistence.*;
 
@@ -23,48 +23,54 @@ public class UserEntity extends BaseEntity {
         return email;
     }
 
-    public void setEmail(String email) {
+    public UserEntity setEmail(String email) {
         this.email = email;
+        return this;
     }
 
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
+    public UserEntity setPassword(String password) {
         this.password = password;
+        return this;
     }
 
     public String getFirstName() {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public UserEntity setFirstName(String firstName) {
         this.firstName = firstName;
+        return this;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public UserEntity setLastName(String lastName) {
         this.lastName = lastName;
+        return this;
     }
 
     public Boolean getActive() {
         return isActive;
     }
 
-    public void setActive(Boolean active) {
+    public UserEntity setActive(Boolean active) {
         isActive = active;
+        return this;
     }
 
     public String getImageUrl() {
         return imageUrl;
     }
 
-    public void setImageUrl(String imageUrl) {
+    public UserEntity setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+        return this;
     }
 
     public List<UserRoleEntity> getUserRoles() {

@@ -1,6 +1,7 @@
-package bg.softuni.mobilele.model.entity;
+package bg.softuni.mobilele.model;
 
-import bg.softuni.mobilele.model.entity.enums.TransmissionEnum;
+import bg.softuni.mobilele.model.enums.EngineEnum;
+import bg.softuni.mobilele.model.enums.TransmissionEnum;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -42,80 +43,90 @@ public class OfferEntity {
     @ManyToOne
     private UserEntity seller;
 
-    public void setId(Long id) {
+    public OfferEntity setId(Long id) {
         this.id = id;
+        return this;
     }
 
     public EngineEnum getEngine() {
         return engine;
     }
 
-    public void setEngine(EngineEnum engine) {
+    public OfferEntity setEngine(EngineEnum engine) {
         this.engine = engine;
+        return this;
     }
 
     public String getImageUrl() {
         return imageUrl;
     }
 
-    public void setImageUrl(String imageUrl) {
+    public OfferEntity setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+        return this;
     }
 
     public int getMileage() {
         return mileage;
     }
 
-    public void setMileage(int mileage) {
+    public OfferEntity setMileage(int mileage) {
         this.mileage = mileage;
+        return this;
     }
 
     public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public OfferEntity setPrice(BigDecimal price) {
         this.price = price;
+        return this;
     }
 
     public TransmissionEnum getTransmission() {
         return transmission;
     }
 
-    public void setTransmission(TransmissionEnum transmission) {
+    public OfferEntity setTransmission(TransmissionEnum transmission) {
         this.transmission = transmission;
+        return this;
     }
 
     public int getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public OfferEntity setYear(int year) {
         this.year = year;
+        return this;
     }
 
     public ModelEntity getModel() {
         return model;
     }
 
-    public void setModel(ModelEntity model) {
+    public OfferEntity setModel(ModelEntity model) {
         this.model = model;
+        return this;
     }
 
     public UserEntity getSeller() {
         return seller;
     }
 
-    public void setSeller(UserEntity seller) {
+    public OfferEntity setSeller(UserEntity seller) {
         this.seller = seller;
+        return this;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    public OfferEntity setDescription(String description) {
         this.description = description;
+        return this;
     }
 
     @Override

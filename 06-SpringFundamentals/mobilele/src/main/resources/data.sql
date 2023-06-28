@@ -1,0 +1,3 @@
+-- --some test users
+-- INSERT INTO users (id, email, first_name, last_name, image_url, is_active, password)
+-- VALUES (1, 'lachezar.balev@gmail.com', 'Lucho', 'Balev', null, 1, '87bf038293f793bbf45b3942753dee25179b3b0e905a17c3776d0675746193792b5918b215047d2a');

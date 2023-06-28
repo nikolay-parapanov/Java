@@ -1,6 +1,6 @@
-package bg.softuni.mobilele.model.entity;
+package bg.softuni.mobilele.model;
 
-import bg.softuni.mobilele.model.entity.enums.CategoryEnum;
+import bg.softuni.mobilele.model.enums.CategoryEnum;
 import jakarta.persistence.*;
 
 @Entity
@@ -23,48 +23,54 @@ public class ModelEntity extends BaseEntity {
         return name;
     }
 
-    public void setName(String name) {
+    public ModelEntity setName(String name) {
         this.name = name;
+        return this;
     }
 
     public CategoryEnum getCategoryEnum() {
         return categoryEnum;
     }
 
-    public void setCategoryEnum(CategoryEnum categoryEnum) {
+    public ModelEntity setCategoryEnum(CategoryEnum categoryEnum) {
         this.categoryEnum = categoryEnum;
+        return this;
     }
 
     public String getImageUrl() {
         return imageUrl;
     }
 
-    public void setImageUrl(String imageUrl) {
+    public ModelEntity setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+        return this;
     }
 
     public int getStartYear() {
         return startYear;
     }
 
-    public void setStartYear(int startYear) {
+    public ModelEntity setStartYear(int startYear) {
         this.startYear = startYear;
+        return this;
     }
 
     public Long getEndYear() {
         return endYear;
     }
 
-    public void setEndYear(Long endYear) {
+    public ModelEntity setEndYear(Long endYear) {
         this.endYear = endYear;
+        return this;
     }
 
     public BrandEntity getBrand() {
         return brand;
     }
 
-    public void setBrand(BrandEntity brand) {
+    public ModelEntity setBrand(BrandEntity brand) {
         this.brand = brand;
+        return this;
     }
 
     @Override
