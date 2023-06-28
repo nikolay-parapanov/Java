@@ -1,6 +1,6 @@
 package bg.softuni.pathfinder.model;
 
-import bg.softuni.pathfinder.model.enums.UserLevel;
+import bg.softuni.pathfinder.model.enums.Level;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
@@ -20,20 +20,20 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false, unique = true)
+    @Column(unique = true)
     private String email;
 
-    @Column(name = "fullname")
+    @Column(name = "full_name")
     private String fullName;
 
     @Column
-    private  int age;
+    private int age;
 
     @ManyToMany(fetch = FetchType.EAGER)
     private Set<Role> roles;
 
     @Enumerated(EnumType.STRING)
-    private UserLevel level;
+    private Level level;
 
     public User() {
         this.roles = new HashSet<>();
@@ -79,12 +79,28 @@ public class User {
         this.roles = roles;
     }
 
-    public UserLevel getLevel() {
+    public Level getLevel() {
         return level;
     }
 
-    public void setLevel(UserLevel level) {
+    public void setLevel(Level level) {
         this.level = level;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     @Override

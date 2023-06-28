@@ -14,6 +14,7 @@ public class Role {
     @Column(unique = true)
     private UserRoles name;
 
+
     public Role() {}
 
     public Long getId() {
