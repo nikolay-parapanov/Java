@@ -1,4 +1,4 @@
-package bg.softuni.mobilele.model;
+package bg.softuni.mobilele.model.entity;
 
 import jakarta.persistence.*;
 
@@ -8,11 +8,17 @@ import java.util.List;
 @Entity
 @Table(name = "users")
 public class UserEntity extends BaseEntity {
-    @Column(nullable = false)
+
+    @Column(nullable = false, unique = true)
     private String email;
     private String password;
+
+    @Column(nullable = false)
     private String firstName;
+
+    @Column(nullable = false)
     private String lastName;
+
     private Boolean isActive;
     private String imageUrl;
 

@@ -1,6 +1,6 @@
 package bg.softuni.mobilele.service;
 
-import bg.softuni.mobilele.model.UserEntity;
+import bg.softuni.mobilele.model.entity.UserEntity;
 import bg.softuni.mobilele.model.dto.UserLoginDTO;
 import bg.softuni.mobilele.model.dto.UserRegisterDTO;
 import bg.softuni.mobilele.repositories.UserRepository;
