@@ -17,13 +17,17 @@
 
 <div class="container">
     <h2 class="text-center text-white">Upload Offer</h2>
-    <form method="POST"
-          class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
+    <form
+            th:action="@{/offers/add}"
+            th:method="post"
+            th:object="addOfferModel"
+            class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
         <div class="row">
 
             <div class="form-group col-md-6 mb-3">
                 <label class="text-center text-white font-weight-bold" for="model">Model</label>
-                <select id="model" class="form-control">
+                <select
+                        id="model" class="form-control">
                     <option value="">- Select a model -</option>
                     <optgroup label="Brand name">
                         <option>Model</option>
@@ -45,9 +49,18 @@
         <div class="row">
             <div class="form-group col-md-6 mb-3">
                 <label class="text-center text-white font-weight-bold" for="engine">Engine</label>
-                <select id="engine" class="form-control">
+                <select
+                        id="engine"
+                        name="engine"
+                        th:errorclass="is-invalid"
+                        class="form-control">
                     <option value="">- Select engine type -</option>
-                    <option>
+                    <option
+                            th:each="e : ${T(bg.softuni.mobilele.model.enums.EngineEnum).values()}"
+                            th:text="${e}"
+                            th:value="${e}"
+                            th:selected="${e} == *{engine}"
+                            >
                         Engine type
                     </option>
                 </select>
