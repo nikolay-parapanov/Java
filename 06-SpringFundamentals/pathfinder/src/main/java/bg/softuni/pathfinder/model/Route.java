@@ -25,6 +25,7 @@ public class Route {
     private String description;
 
     @ManyToOne
+    @MapsId("id")
     private User author;
 
     private String videoUrl;
