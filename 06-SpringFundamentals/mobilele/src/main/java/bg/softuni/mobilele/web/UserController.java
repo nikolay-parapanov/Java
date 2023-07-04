@@ -32,7 +32,7 @@ public class UserController {
     public String login(UserLoginDTO userLoginDTO) {
         userService.login(userLoginDTO);
 //        System.out.println("User is logged: " + userService.login(userLoginDTO)) ;
-        return "redirect:";
+        return "redirect:/";
     }
 
 

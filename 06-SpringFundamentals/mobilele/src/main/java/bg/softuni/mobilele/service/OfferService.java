@@ -44,9 +44,9 @@ public class OfferService {
 
     }
 
-    private OfferEntity mapToEntity(AddOfferDTO addOfferDTO){
-
-
-    }
+//    private OfferEntity mapToEntity(AddOfferDTO addOfferDTO){
+//
+//
+//    }
 
 }
