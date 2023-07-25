@@ -5,9 +5,9 @@ public class BinarySearchTree {
 
     }
 
-    class BinarySearchTree{
-        private Node root;
-    }
+//    class BinarySearchTree{
+//        private Node root;
+//    }
 
     private static class Node {
         private int value;
