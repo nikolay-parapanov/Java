@@ -2,17 +2,25 @@ package JUG_Academy.Core_APIs;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class _11IntStream {
     public static void main(String[] args) {
-        List<String> inputList = List.of("123", "abc", "456", "789", "xyz");
+        List<String> inputItems = List.of("123", "abc", "456", "789", "xyz");
+        IntStream output = numbers(inputItems);
+        output.forEach(System.out::println);
+    }
 
-        List<String> result = inputList
+    public static java.util.stream.IntStream numbers(java.util.List<String> items) {
+        var result = items
                 .stream()
-                .filter(_11IntStream::isValidInteger)
-                .toList();
+                .filter(i -> isValidInteger(i))
+                .mapToInt(Integer::parseInt);
 
-        result.forEach(System.out::println);
+//        System.out.println("List<Integer>:");
+//        result.forEach(System.out::println);
+
+        return result;
 
     }
 
