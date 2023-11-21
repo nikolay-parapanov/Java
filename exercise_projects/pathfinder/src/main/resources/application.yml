@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: "jdbc:postgresql://localhost:5432/postgres?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC"
+    username: postgres-user
+    password: password
+  servlet:
+    multipart:
+      max-file-size: 1MB
+      max-request-size: 5MB
+  mvc:
+    hidden-method:
+      filter:
+        enabled: true
+  #sql:
+    #init:
+      #mode: always
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+    defer-datasource-initialization: true
+#Cloudinary Properties
+#cloudinary:
+  #api-key: 
+  #api-secret: 
+  #cloud-name: 
