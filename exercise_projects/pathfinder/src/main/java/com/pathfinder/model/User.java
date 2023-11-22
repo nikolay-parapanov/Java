@@ -24,13 +24,13 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @Column(name = "fullname")
+    @Column(name = "full_name")
     private String fullName;
 
     @Column
     private int age;
 
-    @Column(nullable = false, unique = true)
+    @Column(unique = true)
     private String email;
 
     @ManyToMany(fetch = FetchType.EAGER)

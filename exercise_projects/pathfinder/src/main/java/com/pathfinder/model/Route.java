@@ -24,6 +24,9 @@ public class Route {
 
     private String name;
 
+    @Column(columnDefinition = "TEXT")
+    private String description;
+
     @ManyToOne
     private User author;
 
@@ -32,8 +35,8 @@ public class Route {
     @OneToMany(targetEntity = Comment.class, mappedBy = "route", cascade = CascadeType.ALL)
     private Set<Comment> comments;
 
-    @OneToOne
-    private Picture header;
+    @OneToMany(mappedBy = "route", fetch = FetchType.EAGER)
+    private Set<Picture> pictures;
 
     @ManyToMany
     private Set<Category> categories;
