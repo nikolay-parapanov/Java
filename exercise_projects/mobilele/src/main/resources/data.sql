@@ -1,0 +1,3 @@
+----- some test users
+--insert into users (id, email, first_name, image_url, is_active, last_name, password)
+--values (1, 'niki@abv.bg', 'Niki', null, 1, 'Para', 'test');
