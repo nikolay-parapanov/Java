@@ -7,20 +7,18 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
-
-@Entity
-@Table(name = "users")
 @Getter
 @Setter
+@Entity
+@Table(name = "users")
 public class UserEntity extends BaseEntity {
-    @Column(nullable = false)
+    @Column(unique = true)
     private String email;
-    @Column(nullable = true)
     private String password;
     private String firstName;
     private String lastName;
-    private boolean isActive;
     private String imageUrl;
+    private boolean active;
 
     @ManyToMany(fetch = FetchType.EAGER)
     private List<UserRoleEntity> userRoles = new ArrayList<>();
@@ -30,3 +28,4 @@ public class UserEntity extends BaseEntity {
         return this;
     }
 }
+

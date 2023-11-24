@@ -20,4 +20,8 @@ public class CurrentUser {
         name = null;
     }
 
+    public boolean isAnonymous(){
+        return !isLoggedIn();
+    }
+
 }

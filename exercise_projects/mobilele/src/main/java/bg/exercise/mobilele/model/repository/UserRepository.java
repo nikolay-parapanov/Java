@@ -1,7 +1,6 @@
 package bg.exercise.mobilele.model.repository;
 
 import bg.exercise.mobilele.model.entity.UserEntity;
-import com.sun.jdi.event.StepEvent;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
