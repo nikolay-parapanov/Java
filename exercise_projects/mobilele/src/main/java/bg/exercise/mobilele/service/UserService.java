@@ -31,6 +31,24 @@ public class UserService {
         this.passwordEncoder = passwordEncoder;
     }
 
+//    REGISTRATION
+    public void registerAndLogin(UserRegisterDTO userRegisterDTO){
+        UserEntity newUser =
+                new UserEntity();
+
+        newUser.setActive(true);
+        newUser.setEmail(userRegisterDTO.getEmail());
+        newUser.setFirstName(userRegisterDTO.getFirstName());
+        newUser.setLastName(userRegisterDTO.getLastName());
+        newUser.setPassword(passwordEncoder.encode(userRegisterDTO.getPassword()));
+
+        newUser = userRepository.save(newUser);
+
+        login(newUser);
+
+    }
+
+//    LOGIN
     public boolean login(UserLoginDTO loginDTO) {
         Optional<UserEntity> userOpt = userRepository.findByEmail(loginDTO.getUsername());
 
@@ -51,22 +69,6 @@ public class UserService {
         }
 
         return success;
-    }
-
-    public void registerAndLogin(UserRegisterDTO userRegisterDTO){
-        UserEntity newUser =
-                new UserEntity();
-
-        newUser.setActive(true);
-        newUser.setEmail(userRegisterDTO.getEmail());
-        newUser.setFirstName(userRegisterDTO.getFirstName());
-        newUser.setLastName(userRegisterDTO.getLastName());
-        newUser.setPassword(passwordEncoder.encode(userRegisterDTO.getPassword()));
-
-        newUser = userRepository.save(newUser);
-
-        login(newUser);
-
     }
 
     public void login(UserEntity userEntity) {
