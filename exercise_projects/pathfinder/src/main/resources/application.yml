@@ -1,8 +1,8 @@
 spring:
   datasource:
     driverClassName: org.postgresql.Driver
-    url: "jdbc:postgresql://localhost:5432/postgres?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC"
-    username: postgres-user
+    url: "jdbc:postgresql://localhost:2022/Pathfinder-db?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8"
+    username: postgres
     password: password
   servlet:
     multipart:
