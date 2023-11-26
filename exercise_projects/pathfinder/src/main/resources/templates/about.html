@@ -1,13 +1,11 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org">
 
-<head>
-    <th:block th:include="{/fragments/head}  "/>
-</head>
+<th:block th:include="@{/fragments/head}  "/>
 <body>
 <div class="wrapper">
     <!-- Navigation -->
-<th:block th:include="{/fragments/header}"/>
+<th:block th:include="@{/fragments/header}"/>
 
     <div class="info">
         <div></div>
@@ -39,11 +37,5 @@
 </div>
 <!-- Wrapper Ends -->
 </body>
-<footer class="footer bg-blur rounded">
-    <div class="container-fluid text-center">
-        <div class="h5 text-white">
-            &copy; Lucho, Chocho & Spring Advanced Students 2021. All rights reserved.
-        </div>
-    </div>
-</footer>
+<th:block th:include="{/fragments/footer"/>
 </html>
